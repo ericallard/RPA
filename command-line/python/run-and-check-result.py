@@ -21,6 +21,7 @@ def PlayAndWait(macro, timeout_seconds = 10, var1 = '-', var2 = '-', var3 = '-',
 	
 	status_runtime = 0
 	
+	print("*****  MACRO:" + macro + " ,var1 = " + var1)
 	print("Log File will show up at " + path_log)
 	
 	while(not os.path.exists(path_log) and status_runtime < timeout_seconds):
@@ -39,8 +40,7 @@ def PlayAndWait(macro, timeout_seconds = 10, var1 = '-', var2 = '-', var3 = '-',
 		proc.kill()
 	
 	print(status_text)
-	sys.exit(status_init)
-
+	
 if __name__ == '__main__':
 
-	PlayAndWait('Demo/Core/DemoAutofill', timeout_seconds = 35, path_downloaddir = r'C:\test\\', path_autorun_html = r'c:\test\ui.vision.html', browser_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe')
+	PlayAndWait(sys.argv[1], timeout_seconds = 120, var1 = sys.argv[2], path_downloaddir = r'/Users/ericallard/Downloads', path_autorun_html = r'/Users/ericallard/Documents/projets/RPA/test/CTMA/ui.vision.html', browser_path=r'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
